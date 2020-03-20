@@ -1,0 +1,90 @@
+$hd-native: 1366px;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: sans-serif;
+  height: 100%;
+  position: relative;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba($color: #000, $alpha: 0.5);
+  padding: 20px 35px 20px 20px;
+  overflow: hidden;
+}
+
+.navlist {
+  display: flex;
+  justify-content: flex-end;
+
+  li {
+    list-style-type: none;
+
+    a {
+      padding-right: 25px;
+      text-decoration: none;
+      color: #fff;
+    }
+  }
+}
+
+section {
+  display: grid;
+  place-content: center;
+  height: 110vh;
+  background: url(../img/rubikfhd.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+}
+
+@media (min-width: $hd-native) {
+  .container {
+    max-width: $hd-native;
+    margin: auto;
+  }
+}
+
+@media (max-width: 550px) {
+  .navlist {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 0;
+    transition: 1s;
+    overflow: hidden;
+
+    li {
+      margin: 15px 0;
+    }
+  }
+  .responsif__menu {
+    position: fixed;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100%;
+    cursor: pointer;
+  }
+
+  .responsif__menu > span {
+    border: 2px solid white;
+    margin: 5px;
+    width: 30px;
+  }
+  .muncul-menu {
+    display: flex;
+  }
+}
